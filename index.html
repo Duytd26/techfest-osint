@@ -54,14 +54,14 @@
 </head>
 <body>
     <div class="container">
-        <h1>Nhập đáp án cuối cùng</h1>
+        <h1>Nhập mật mã cuối cùng🌎</h1>
         <input type="text" id="answerInput" placeholder="Nhập đáp án của bạn">
         <button onclick="checkAnswer()">Kiểm tra</button>
         <p id="message"></p>
     </div>
 
     <script>
-        const correctAnswer = "DapAnChinhXacCuaBan"; // Thay đổi đáp án này thành đáp án đúng của bạn
+        const correctAnswer = "FPTFLAG2025"; // Thay đổi đáp án này thành đáp án đúng của bạn
         const answerInput = document.getElementById('answerInput');
         const messageDisplay = document.getElementById('message');
 
@@ -69,7 +69,7 @@
             const userAnswer = answerInput.value.trim(); // Lấy giá trị nhập vào và loại bỏ khoảng trắng thừa
 
             if (userAnswer.toLowerCase() === correctAnswer.toLowerCase()) { // Chuyển về chữ thường để so sánh không phân biệt hoa thường
-                messageDisplay.textContent = "Chúc mừng bạn đã hoàn thành!";
+                messageDisplay.textContent = "Chúc mừng bạn đã xuất sắc vượt qua thử thách🎉🎊";
                 messageDisplay.className = "success"; // Thêm class để định dạng màu xanh
             } else {
                 messageDisplay.textContent = "Đáp án không đúng. Vui lòng thử lại.";
