@@ -1,14 +1,81 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
-    <script type="module" crossorigin src="/assets/index-DROwy0mC.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-z8NX5j1X.css">
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trò chơi OSINT</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        input[type="text"] {
+            padding: 10px;
+            margin-bottom: 20px;
+            width: 250px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #message {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        .success {
+            color: green;
+        }
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Nhập đáp án cuối cùng</h1>
+        <input type="text" id="answerInput" placeholder="Nhập đáp án của bạn">
+        <button onclick="checkAnswer()">Kiểm tra</button>
+        <p id="message"></p>
+    </div>
+
+    <script>
+        const correctAnswer = "DapAnChinhXacCuaBan"; // Thay đổi đáp án này thành đáp án đúng của bạn
+        const answerInput = document.getElementById('answerInput');
+        const messageDisplay = document.getElementById('message');
+
+        function checkAnswer() {
+            const userAnswer = answerInput.value.trim(); // Lấy giá trị nhập vào và loại bỏ khoảng trắng thừa
+
+            if (userAnswer.toLowerCase() === correctAnswer.toLowerCase()) { // Chuyển về chữ thường để so sánh không phân biệt hoa thường
+                messageDisplay.textContent = "Chúc mừng bạn đã hoàn thành!";
+                messageDisplay.className = "success"; // Thêm class để định dạng màu xanh
+            } else {
+                messageDisplay.textContent = "Đáp án không đúng. Vui lòng thử lại.";
+                messageDisplay.className = "error"; // Thêm class để định dạng màu đỏ
+            }
+        }
+    </script>
+</body>
 </html>
